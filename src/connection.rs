@@ -885,7 +885,7 @@ impl<Exe: Executor> Connection<Exe> {
                 proxy_to_broker_url.clone(),
                 certificate_chain,
                 #[cfg(any(feature = "tokio-runtime", feature = "async-std-runtime"))]
-                identity,
+                identity.clone(),
                 allow_insecure_connection,
                 tls_hostname_verification_enabled,
                 executor.clone(),
